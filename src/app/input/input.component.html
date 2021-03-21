@@ -1,0 +1,6 @@
+<form (submit)="onSubmit($event)">
+  <label for="todo">
+    <input type="text" id='todo' #inputRef placeholder="My Task...">
+    <button (click)="onSubmit($event)"><i class="fas fa-plus"></i></button>
+  </label>
+</form>

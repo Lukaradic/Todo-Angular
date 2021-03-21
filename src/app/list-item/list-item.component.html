@@ -1,0 +1,9 @@
+<li [id]="id" class="list-item" [ngClass]="{'checked': checked}">
+  <span class="list-item-text">{{item.text}}</span>
+  <span class="list-item-check" (click)="checkMethod()">
+    <i class="fas fa-check"  *ngIf="checked"></i>
+  </span>
+  <span class="list-item-del" >
+    <i class="fas fa-trash"></i>
+  </span>
+</li>

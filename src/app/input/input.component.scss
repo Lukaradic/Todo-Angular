@@ -1,0 +1,35 @@
+button {
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  border: none;
+  background-color: #5ca8e0;
+  cursor: pointer;
+  i {
+    color: white;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+label {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  font-size: 10px;
+  input {
+    background-color: #eee;
+    flex: 1;
+    outline: none;
+    border-radius: 15px;
+    box-sizing: border-box;
+    border: 1px solid transparent;
+    padding: 7px 15px;
+    font-size: 2em;
+
+    &:focus {
+      border: 1px solid #1a73e8;
+    }
+  }
+}
