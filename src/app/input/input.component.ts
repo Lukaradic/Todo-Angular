@@ -10,7 +10,6 @@ export class InputComponent implements OnInit {
 
 
   @ViewChild('inputRef') ref: ElementRef
-  // @Input() addTask;
   @Output() addEmitter = new EventEmitter();
 
   constructor() { }

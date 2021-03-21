@@ -8,14 +8,19 @@ import { Todo } from '../types';
 })
 export class ListComponent implements OnInit {
   @Input() tasksArr: Array<Todo> = [];
-  @Output() deleteEmmiter = new EventEmitter()
+
+  @Output() listEvent = new EventEmitter<string>();
+
+  callDeleteTask(e): void {
+    this.listEvent.emit(e);
+  }
   constructor() {}
 
   ngOnInit(): void {
     console.log(this.tasksArr);
   }
 
-  deleteMethod(e) {
-    this.deleteEmmiter.emit(e.target)
-  }
+
+
+
 }

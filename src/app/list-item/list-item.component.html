@@ -3,7 +3,7 @@
   <span class="list-item-check" (click)="checkMethod()">
     <i class="fas fa-check"  *ngIf="checked"></i>
   </span>
-  <span class="list-item-del" >
-    <i class="fas fa-trash"></i>
+  <span class="list-item-del" (click)="callDeleteTask($event)">
+    <i class="fas fa-trash del-button"></i>
   </span>
 </li>

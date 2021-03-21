@@ -1,5 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
-
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 @Component({
   selector: 'app-list-item',
   templateUrl: './list-item.component.html',
@@ -9,7 +8,7 @@ export class ListItemComponent implements OnInit {
 
   @Input() item;
   @Input() id;
-  @Input() deleteMethod;
+  @Output() deleteMethod = new EventEmitter();
   checked: boolean = false;
 
   constructor() { }
@@ -17,16 +16,15 @@ export class ListItemComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  delete(e){
-    console.log(e)
-  }
-
-
-  //  if component checked === true;
-  //  add class checked and display green check icon
-  //  else nothing
-
   checkMethod(){
     this.checked = !this.checked
   }
+  callDeleteTask(e){
+    let id = e.target.closest('li').id;
+    this.deleteMethod.emit(parseInt(id))
+  }
+
+  //  pronadji nacin da vidis koji je el kliknut precizno
+  //  ako je kanta kliknuta odraditi del()
+  //  ako je check kliknut odraditi checked()
 }

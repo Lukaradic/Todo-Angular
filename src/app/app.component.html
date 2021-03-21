@@ -1,6 +1,5 @@
 <div class="wrapper">
   <h2 class="wrapper-title">All Tasks</h2>
   <app-input (addEmitter)="addTask($event)"></app-input>
-  <app-list [tasksArr]='tasks' (deleteEmmiter)="deleteTask($event)"></app-list>
-
+  <app-list [tasksArr]='tasks' (listEvent)="callDeleteTask($event)"></app-list>
 </div>

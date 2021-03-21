@@ -1,5 +1,8 @@
-<ul (click)="deleteMethod($event)">
-  <!-- <ul> -->
-  <app-list-item [item]="item" [id]="item.id" *ngFor="let item of tasksArr" ></app-list-item>
+
+<ul *ngIf="tasksArr.length > 0">
+  <app-list-item [item]="item" (deleteMethod)="callDeleteTask($event)" [id]="item.id" *ngFor="let item of tasksArr" ></app-list-item>
 </ul>
 
+<div class="empty" *ngIf="tasksArr.length === 0">
+  Start Adding Your Tasks
+</div>

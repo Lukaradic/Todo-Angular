@@ -7,36 +7,19 @@ import { Todo } from './types';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  tasks: Array<Todo> = [
-    {
-      id: 1,
-      text: 'random',
-    },
-    {
-      id: 2,
-      text: 'random 2',
-    },
-  ];
+  tasks: Array<Todo> = [];
 
   addTask(todo: Todo) {
     this.tasks.push(todo);
-    console.log(this.tasks);
   }
 
-  deleteTask(el: HTMLElement) {
-    let id = el.parentElement.id;
-    if (id) {
-      if (el.classList.contains('list-item-del')) {
-        let arr = [...this.tasks];
-        let index = arr.findIndex((item) => item.id === parseInt(id));
-        arr.splice(index, 1);
-        this.tasks = arr;
-      }
-
-      console.log(id);
-    }
+  deleteTask(id: string){
+    let arr = [...this.tasks];
+    let index = arr.findIndex(el => el.id === parseInt(id))
+    arr.splice(index, 1)
+    this.tasks = arr;
   }
-  finishTask(id: string) {
-    console.log(id);
+  callDeleteTask(e){
+    this.deleteTask(e)
   }
 }
